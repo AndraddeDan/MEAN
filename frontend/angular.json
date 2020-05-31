@@ -28,7 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/josefin-sans.css",
+              "src/assets/css/normalize.css"
             ],
             "scripts": []
           },
