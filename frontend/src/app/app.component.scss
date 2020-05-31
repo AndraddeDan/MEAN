@@ -3,25 +3,12 @@
   width: 100%;
 }
 
-::-webkit-scrollbar {
-  background-color: transparent;
-  height: 6px;
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #bcbcbc;
-  border-radius: 12px;
-}
-
 .home {
   @extend %background-comon;
   background: url('/assets/images/background.jpg') no-repeat;
-  background-size: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
   position: relative;
 
   &-layer {
