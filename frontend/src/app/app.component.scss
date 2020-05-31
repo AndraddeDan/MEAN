@@ -1,0 +1,94 @@
+%background-comon {
+  height: 100vh;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bcbcbc;
+  border-radius: 12px;
+}
+
+.home {
+  @extend %background-comon;
+  background: url('/assets/images/background.jpg') no-repeat;
+  background-size: 100%;
+  position: relative;
+
+  &-layer {
+    @extend %background-comon;
+    background-color: rgba(170, 0, 0, 0.8);
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.table {
+  border: 2.5px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+  padding: 25px;
+
+  &-wrapper {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  &__phrase {
+    color: white;
+    display: inline;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &-plans {
+    border-spacing: 10px;
+    width: 100%;
+
+    &__head {
+      background-color: black;
+      color: rgba(170, 0, 0, 0.8);
+      font-family: sans-serif;
+
+      &-th {
+        border-radius: 5px;
+        font-size: 1em;
+        white-space: pre-wrap;
+      }
+    }
+
+    &__body {
+      &-td {
+        border-collapse: separate;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.input {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 0;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+  height: 50px;
+  outline: none;
+  text-align: center;
+  width: 100%;
+}
