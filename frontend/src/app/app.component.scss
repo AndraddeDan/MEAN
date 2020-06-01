@@ -21,12 +21,6 @@
   width: unset !important;
 }
 
-@media (max-width: 780px) {
-  .table {
-    width: 80%;
-  }
-}
-
 .home {
   @extend %background-common;
   background: url('/assets/images/background.jpg') no-repeat;
@@ -52,6 +46,7 @@
   flex-direction: column;
   margin: 25px;
   padding: 25px;
+  width: 80%;
 
   &-wrapper {
     overflow: auto hidden;
@@ -110,6 +105,13 @@
   font-size: 2em;
   justify-content: center;
   text-align: center;
+
+  &--text {
+    @extend %input-comon;
+    background-color: transparent;
+    text-align: center;
+    width: 80%;
+  }
 
   &--select {
     @extend %input-comon;
