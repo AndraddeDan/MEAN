@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PlanoService } from './plano.service';
+import { ApiService } from './api.service';
 
 describe('PlanoService', () => {
-  let service: PlanoService;
+  let service: ApiService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PlanoService);
+    service = TestBed.inject(ApiService);
   });
 
   it('should be created', () => {
