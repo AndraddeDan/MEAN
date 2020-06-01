@@ -1,5 +1,4 @@
 /* Descrição: arquivo responsável pelas rotas da api relacionada ao 'Plano' */
-
 const express = require('express');
 
 const router = express.Router();

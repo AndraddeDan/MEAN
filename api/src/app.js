@@ -10,30 +10,32 @@ const app = express();
 
 // Database Import
 const database = require('./config/database');
-
 mongoose.Promise = global.Promise;
 
 // Database Conection
-mongoose.connect(database.local.localUrl, { useNewUrlParser: true, useUnifiedTopology: true }).then(
-  () => console.log('Connection success'),
-  (err) => {
-    console.error(`Connection error: ${err}`);
-    process.exit();
-  }
-);
+mongoose.connect(database.local.localUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(
+    () => console.log('Connection success'),
+    (err) => {
+      console.error(`Connection error: ${err}`);
+      process.exit();
+    });
 
-// => Rotas
-
-const index = require('./routes/index');
-const planoRoute = require('./routes/plano.routes');
-
+// ROTAS
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(morgan('dev'));
 app.use(cors());
 
+const index = require('./routes/index');
+const planoRoute = require('./routes/plano.routes');
+const precoRoute = require('./routes/preco.routes');
+// const dddRoute = require('./routes/plano.routes');
+
 app.use('/api/v1', index);
-app.use('/api/v1/planos', planoRoute)
+app.use('/api/v1/planos', planoRoute);
+app.use('/api/v1/precos', precoRoute);
+// app.use('/api/v1/ddds', dddRoute);
 
 module.exports = app;
