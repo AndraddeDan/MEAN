@@ -1,6 +1,7 @@
-/*
- * Arquivo: server.js
- * Descrição: arquivo responsável por toda a configuração da aplicação (backend)
- * Data: 31/05/2020
- * Autor: Daniel Andrade
- */
+/* Descrição: arquivo responsável por toda a configuração da aplicação (backend) */
+
+const app = require('./src/app');
+const port = process.env.PORT || 3000;
+
+app.listen(port);
+console.log("Application on port", port)
