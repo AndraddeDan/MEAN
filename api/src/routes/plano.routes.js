@@ -5,7 +5,6 @@ const express = require('express');
 const router = express.Router();
 const planoController = require('../controllers/plano.controller');
 
-router.get('/planos', planoController.get); // Retorna todos os planos
-router.get('/plano/:planoNome', controller.getByPlanoNome); // Retorna o plano pelo nome
+router.get('/', planoController.findAll); // RETORNA TODOS OS PLANOS
 
 module.exports = router;

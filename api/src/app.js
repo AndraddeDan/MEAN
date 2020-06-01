@@ -34,6 +34,6 @@ app.use(morgan('dev'));
 app.use(cors());
 
 app.use('/api/v1', index);
-app.use('/planos', planoRoute)
+app.use('/api/v1/planos', planoRoute)
 
 module.exports = app;
