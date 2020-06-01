@@ -31,11 +31,11 @@ app.use(cors());
 const index = require('./routes/index');
 const planoRoute = require('./routes/plano.routes');
 const precoRoute = require('./routes/preco.routes');
-// const dddRoute = require('./routes/plano.routes');
+const dddRoute = require('./routes/ddd.routes');
 
 app.use('/api/v1', index);
 app.use('/api/v1/planos', planoRoute);
 app.use('/api/v1/precos', precoRoute);
-// app.use('/api/v1/ddds', dddRoute);
+app.use('/api/v1/ddds', dddRoute);
 
 module.exports = app;
