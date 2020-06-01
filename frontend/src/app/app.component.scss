@@ -1,10 +1,35 @@
-%background-comon {
+%background-common {
   height: 100vh;
   width: 100%;
 }
 
+%input-comon {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 0;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-weight: 900;
+  height: 50px;
+  outline: none;
+  width: 100%;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-form-field-infix {
+  width: unset !important;
+}
+
+@media (max-width: 780px) {
+  .table {
+    width: 80%;
+  }
+}
+
 .home {
-  @extend %background-comon;
+  @extend %background-common;
   background: url('/assets/images/background.jpg') no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -12,11 +37,12 @@
   position: relative;
 
   &-layer {
-    @extend %background-comon;
+    @extend %background-common;
+    align-items: center;
     background-color: rgba(170, 0, 0, 0.8);
-    left: 0;
+    display: flex;
+    justify-content: center;
     position: absolute;
-    top: 0;
   }
 }
 
@@ -29,7 +55,7 @@
   padding: 25px;
 
   &-wrapper {
-    overflow-x: auto;
+    overflow: auto hidden;
     width: 100%;
   }
 
@@ -37,7 +63,9 @@
     color: white;
     display: inline;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 2.5em;
+    font-size: 3em;
+    font-weight: 600;
+    line-height: 1.2;
     text-align: center;
     text-transform: uppercase;
   }
@@ -48,13 +76,22 @@
 
     &__head {
       background-color: black;
-      color: rgba(170, 0, 0, 0.8);
+      color: white;
       font-family: sans-serif;
 
       &-th {
         border-radius: 5px;
-        font-size: 1em;
-        white-space: pre-wrap;
+
+        .title {
+          display: inline-block;
+          font-family: 'Roboto';
+          font-size: 1.3em;
+          font-weight: 400;
+          line-height: 1.1;
+          margin: 15px;
+          text-transform: uppercase;
+          white-space: pre-wrap;
+        }
       }
     }
 
@@ -68,14 +105,31 @@
 }
 
 .input {
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 0;
-  border-radius: 5px;
-  font-family: sans-serif;
+  @extend %input-comon;
+  align-items: center;
+  display: flex;
   font-size: 2em;
-  font-weight: 900;
-  height: 50px;
-  outline: none;
+  justify-content: center;
   text-align: center;
-  width: 100%;
+
+  &--select {
+    @extend %input-comon;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    text-align: end;
+
+    span {
+      font-size: 2em;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .mat-input {
+      margin-top: 10px;
+    }
+  }
 }

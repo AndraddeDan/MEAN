@@ -8,22 +8,61 @@
         <table class="table-plans">
           <thead class="table-plans__head">
             <tr>
-              <th class="table-plans__head-th"> <h3>Origem</h3>          </th>
-              <th class="table-plans__head-th"> <h3>Destino</h3>         </th>
-              <th class="table-plans__head-th"> <h3>Tempo</h3>           </th>
-              <th class="table-plans__head-th"> <h3>Plano FaleMais</h3>  </th>
-              <th class="table-plans__head-th"> <h3>Com FaleMais</h3>    </th>
-              <th class="table-plans__head-th"> <h3>Sem FaleMais</h3>    </th>
+              <th class="table-plans__head-th"> <span class="title">Origem</span>          </th>
+              <th class="table-plans__head-th"> <span class="title">Destino</span>         </th>
+              <th class="table-plans__head-th"> <span class="title">Tempo /min</span>           </th>
+              <th class="table-plans__head-th"> <span class="title">Plano FaleMais</span>  </th>
+              <th class="table-plans__head-th"> <span class="title">Com FaleMais</span>    </th>
+              <th class="table-plans__head-th"> <span class="title">Sem FaleMais</span>    </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="table-plans__body-td"> <input type="text" class="input"> </td>
-              <td class="table-plans__body-td"> <input type="text" class="input"> </td>
-              <td class="table-plans__body-td"> <input type="text" class="input"> </td>
-              <td class="table-plans__body-td"> <input type="text" class="input"> </td>
-              <td class="table-plans__body-td"> <input type="text" class="input"> </td>
-              <td class="table-plans__body-td"> <input type="text" class="input"> </td>
+              <td class="table-plans__body-td">
+                <div class="input--select">
+                  <span>{{ selectedOrigem }}</span>
+                  <mat-form-field>
+                    <mat-select [(ngModel)]="selectedOrigem" class="mat-input">
+                      <mat-option *ngFor="let item of ddd" [value]="item">
+                        {{item}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </td>
+
+              <td class="table-plans__body-td">
+                <div class="input--select">
+                  <span>{{ selectedDestino }}</span>
+                  <mat-form-field>
+                    <mat-select [(ngModel)]="selectedDestino" class="mat-input">
+                      <mat-option *ngFor="let item of ddd" [value]="item">
+                        {{item}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </td>
+
+              <td class="table-plans__body-td">
+                <input type="text" matInput class="input">
+              </td>
+
+              <td class="table-plans__body-td">
+                <div class="input--select">
+                  <span>{{ selectedPlano }}</span>
+                  <mat-form-field>
+                    <mat-select [(ngModel)]="selectedPlano" class="mat-input">
+                      <mat-option *ngFor="let item of ddd" [value]="item">
+                        {{item}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </td>
+
+              <td class="table-plans__body-td"> <div class="input"> R${{ comFaleMaisValue }} </div> </td>
+              <td class="table-plans__body-td"> <div class="input"> R${{ semFaleMaisValue }} </div> </td>
             </tr>
           </tbody>
         </table>
