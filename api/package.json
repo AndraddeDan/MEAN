@@ -4,7 +4,6 @@
   "description": "MEAN VxTell",
   "main": "server.js",
   "scripts": {
-    "dev" : "nodemon",
     "lint" : "eslint --ext .js -f ./node_modules/eslint-friendly-formatter . --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
