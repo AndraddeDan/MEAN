@@ -7,7 +7,7 @@
   background-color: rgba(255, 255, 255, 0.6);
   border: 0;
   border-radius: 5px;
-  font-family: sans-serif;
+  font-family: 'Josefin Sans';
   font-weight: 900;
   height: 50px;
   outline: none;
@@ -102,7 +102,6 @@
   @extend %input-comon;
   align-items: center;
   display: flex;
-  font-size: 2em;
   justify-content: center;
   text-align: center;
 
@@ -122,11 +121,10 @@
     text-align: end;
 
     span {
-      font-size: 2em;
-      left: 50%;
+      left: 40%;
       position: absolute;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-40%, -50%);
     }
 
     .mat-input {

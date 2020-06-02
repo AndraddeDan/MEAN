@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Plano, Infos, Preco } from './models';
+import { DDD, Infos, Plano, Preco } from './models';
 import { ApiService } from './services/api.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   public comFaleMaisValue: string;
   public semFaleMaisValue: string;
 
-  public ddd: string[] = [];
+  public ddd: DDD[] = [];
   public planos: Plano[] = [];
   private precos: Preco[] = [];
 

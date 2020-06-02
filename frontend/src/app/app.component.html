@@ -23,8 +23,8 @@
                   <span>{{ selectedOrigem }}</span>
                   <mat-form-field>
                     <mat-select [(ngModel)]="selectedOrigem" class="mat-input">
-                      <mat-option *ngFor="let item of ddd" [value]="item">
-                        {{item}}
+                      <mat-option *ngFor="let item of ddd" [value]="item.ddd">
+                        {{ item.ddd }}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
@@ -36,8 +36,8 @@
                   <span>{{ selectedDestino }}</span>
                   <mat-form-field>
                     <mat-select [(ngModel)]="selectedDestino" class="mat-input">
-                      <mat-option *ngFor="let item of ddd" [value]="item">
-                        {{item}}
+                      <mat-option *ngFor="let item of ddd" [value]="item.ddd">
+                        {{ item.ddd }}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
@@ -55,8 +55,8 @@
                   <span>{{ selectedPlano }}</span>
                   <mat-form-field>
                     <mat-select [(ngModel)]="selectedPlano" class="mat-input">
-                      <mat-option *ngFor="let item of ddd" [value]="item">
-                        {{item}}
+                      <mat-option *ngFor="let item of planos" [value]="item.planoNome">
+                        {{ item.planoNome }}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
