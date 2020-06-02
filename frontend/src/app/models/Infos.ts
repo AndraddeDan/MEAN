@@ -1,8 +1,9 @@
 import { Plano } from './Plano';
 import { Preco } from './Preco';
+import { DDD } from './DDD';
 
 export interface Infos {
-  ddds: string[];
+  ddds: DDD[];
   planos: Plano[];
   precos: Preco[];
 }
