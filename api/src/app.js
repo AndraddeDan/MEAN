@@ -1,7 +1,5 @@
 /* Descrição: Arquivo responsável pela configuração da aplicação */
-
 const bodyParser = require('body-parser');
-const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
@@ -26,16 +24,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(morgan('dev'));
-app.use(cors());
 
 const index = require('./routes/index');
 const planoRoute = require('./routes/plano.routes');
 const precoRoute = require('./routes/preco.routes');
 const dddRoute = require('./routes/ddd.routes');
+const infos = require('./routes/infos.routes');
 
 app.use('/api/v1', index);
 app.use('/api/v1/planos', planoRoute);
 app.use('/api/v1/precos', precoRoute);
 app.use('/api/v1/ddds', dddRoute);
+app.use('/api/v1/infos', infos);
 
 module.exports = app;
