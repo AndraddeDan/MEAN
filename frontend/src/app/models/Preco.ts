@@ -1,5 +1,5 @@
 export class Preco {
-  origem: number;
-  destino: number;
+  origem: string;
+  destino: string;
   valorMinuto: number;
 }
