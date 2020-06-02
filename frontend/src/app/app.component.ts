@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Plano } from './models';
+import { Plano, Infos, Preco } from './models';
+import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +15,17 @@ export class AppComponent implements OnInit {
   public comFaleMaisValue: string;
   public semFaleMaisValue: string;
 
-  public ddd: number[] = [11, 16, 17, 18];
+  public ddd: string[] = [];
   public planos: Plano[] = [];
+  private precos: Preco[] = [];
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-
+    this.apiService.infos().subscribe((infos: Infos) => {
+      this.planos = infos.planos;
+      this.ddd = infos.ddds;
+      this.precos = infos.precos;
+    });
   }
 }

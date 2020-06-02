@@ -7,12 +7,16 @@ import { Endpoint } from '../models';
   providedIn: 'root'
 })
 export class ApiService {
-  private url = environment.API;
+  private url = environment.BASE_URL;
 
   constructor(private http: HttpClient) { }
 
   ddds() {
     return this.http.get(this.url + Endpoint.DDDS);
+  }
+
+  infos() {
+    return this.http.get(this.url + Endpoint.INFOS);
   }
 
   planos() {
@@ -22,5 +26,4 @@ export class ApiService {
   precos() {
     return this.http.get(this.url + Endpoint.PRECOS);
   }
-
 }
