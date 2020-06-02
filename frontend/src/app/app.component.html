@@ -46,16 +46,17 @@
 
               <td class="table-plans__body-td">
                 <div class="input">
-                  <input type="text" matInput class="input--text">
+                  <input type="text" class="input--text"
+                    [(ngModel)]="selectedTempo" numbersOnly inputmode="numeric">
                 </div>
               </td>
 
               <td class="table-plans__body-td">
                 <div class="input--select">
-                  <span>{{ selectedPlano }}</span>
+                  <span>{{ selectedPlano?.planoNome }}</span>
                   <mat-form-field>
                     <mat-select [(ngModel)]="selectedPlano" class="mat-input">
-                      <mat-option *ngFor="let item of planos" [value]="item.planoNome">
+                      <mat-option *ngFor="let item of planos" [value]="item">
                         {{ item.planoNome }}
                       </mat-option>
                     </mat-select>
@@ -63,8 +64,13 @@
                 </div>
               </td>
 
-              <td class="table-plans__body-td"> <div class="input"> R$ {{ comFaleMaisValue }} </div> </td>
-              <td class="table-plans__body-td"> <div class="input"> R$ {{ semFaleMaisValue }} </div> </td>
+              <td class="table-plans__body-td">
+                <div class="input"> {{ calcTarifa(true) }} </div>
+              </td>
+
+              <td class="table-plans__body-td">
+                <div class="input"> {{ calcTarifa() }} </div>
+              </td>
             </tr>
           </tbody>
         </table>
