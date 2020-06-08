@@ -6,6 +6,12 @@ const morgan = require('morgan');
 
 const app = express();
 
+// Middlewares
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+app.use(morgan('dev'));
+
 // Database Import
 const database = require('./config/database');
 mongoose.Promise = global.Promise;
@@ -20,11 +26,6 @@ mongoose.connect(database.local.localUrl, { useNewUrlParser: true, useUnifiedTop
     });
 
 // ROTAS
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-app.use(morgan('dev'));
-
 const index = require('./routes/index');
 const planoRoute = require('./routes/plano.routes');
 const precoRoute = require('./routes/preco.routes');

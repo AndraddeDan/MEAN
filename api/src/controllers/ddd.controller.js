@@ -2,7 +2,7 @@
 const ddd = require('../models/ddd.model');
 
 exports.findAll = (req, res) => {
-  ddd.find()
+  return ddd.find()
     .then((ddds) => res.status(200).send(ddds))
-    .catch((err) => res.status(500).send({ mensagem: 'Erro ao selecionar os planos' || err.menssage }));
+    .catch((err) => res.status(500).send({ mensagem: err.message || 'Erro ao selecionar os planos' || err.menssage }));
 };

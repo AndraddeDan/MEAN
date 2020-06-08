@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  private canCalc() {
+  private get canCalc() {
     return this.selectedOrigem !== undefined
       && this.selectedDestino !== undefined
       && this.selectedTempo !== undefined
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
     const precoAtual = this.precos
       .find(i => i.destino === this.selectedDestino && i.origem === this.selectedOrigem);
 
-    if (!precoAtual && this.canCalc()) { return 'Indisponível'; }
+    if (!precoAtual && this.canCalc) { return 'Indisponível'; }
 
     const planoCalculo = (precoAtual?.valorMinuto * (this.selectedTempo - this.selectedPlano?.minutosGratis));
     const plano = planoCalculo > 0 ? planoCalculo : 0;
@@ -51,6 +51,6 @@ export class AppComponent implements OnInit {
       }
     };
 
-    return this.canCalc() ? 'R$ ' + calc().toFixed(2) : 'R$ 0,00';
+    return this.canCalc ? 'R$ ' + calc().toFixed(2) : 'R$ 0,00';
   }
 }

@@ -1,4 +1,4 @@
-db.preco.drop();
+db.preco.deleteMany({});
 db.preco.insert([
   {
     "origem" : "011",
