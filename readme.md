@@ -1,6 +1,6 @@
-## Planos
+# PLANOS DE TELEFONIA
 
-- Criei o teste baseado em MEAN stack (Mongo, Express, Angular e Nodejs).
+- Criei um projeto com base MEAN stack (Mongo, Express, Angular e Nodejs).
 - Separei as pastas por contexto onde: `backend`, `db` contém os dados a serem inseridos no mongodb conforme a tabela informada no pdf do teste e `frontend` contém o front da aplicação com a lógica de cálculos a ser exibida ao usuário.
 
 ## Como executar
